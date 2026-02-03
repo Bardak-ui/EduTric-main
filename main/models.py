@@ -28,7 +28,7 @@ class Groups(models.Model):
     course = models.CharField(max_length=2,choices=Course.COURSE, verbose_name="Курс", default='11')
 
     def __str__(self):
-        return f"{self.name}-{self.course}"
+        return f"{self.name}"
 
     class Meta:
         verbose_name = "Группа"

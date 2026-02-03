@@ -1,0 +1,166 @@
+/* *{
+    border: 1px solid red;
+} */
+
+html{
+    min-height: 100%;
+    min-width: 100%;
+}
+/* Общие стили */
+body { 
+    margin: 0;
+    padding: 0;
+    background: no-repeat;
+    background: fixed;
+    background-image: conic-gradient(
+            from 90deg at 60% 15%,
+            #5f5f5f, 
+            #000000
+        );
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+.icon img { /* Ссылки на шрктэ и администрацию  */
+    min-width: 45px; /* Размер иконок */
+    min-height: 45px; 
+
+}
+
+.left_panel nav{
+    display: flex;
+    flex-direction: column;
+    position: fixed ;
+    width: 75px; /* Ширина левой панели */
+    margin: 15px;
+    left: 15px;
+    gap: 10px;
+    top: 10px;
+    z-index: 3;
+}
+
+.left_panel .navigation{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 45px; /* Ширина левой панели */
+    gap: 20px; /* Расстояние между иконками */
+    border-radius: 15px;
+    border: 5px solid;
+    border-color: linear-gradient(90deg,#5f5f5f, #000000) 1px; /*сделать обратную обводку скругленную */
+    background: linear-gradient(-180deg, #5f5f5f, #000000);
+}
+
+.left_panel .ssilki{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 5px solid;
+    background: linear-gradient(-180deg, #5f5f5f, #000000);
+    border-color: linear-gradient(0deg,#5f5f5f, #000000) 1px;
+    inset: auto 0 0 0;
+    z-index: -2;
+}
+
+
+/* Иконки */
+.left_panel img {
+    width: 35px; /* Фиксированный размер иконок */
+    height: 35px; 
+    cursor: pointer; /* Курсор при наведении */
+    transition: transform 0.2s ease; /* Плавное увеличение при наведении */
+    object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+.left_panel img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.left_panel img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+/* Аватарка */
+.header .avatar img {
+    width: 100px; /* Размер аватарки */
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Основной контент */
+.content {
+    margin-left: 65px; /* Отступ для левой панели */
+    margin-top: 65px; /* Отступ для шапки */
+    padding: 20px; /* Внутренний отступ */
+    transition: margin-left 0.3s ease; /* Плавное изменение отступа */
+}
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .left_panel {
+        position: fixed;
+        width: 65px; /* Ширина левой панели */
+        top: 50px;
+        height: calc(100vh - 50px);
+        padding-top: 20px;
+        gap: 15px;
+    }
+
+    .left_panel img {
+        width: 35px; /* Размер иконок */
+        height: 35px;
+    }
+
+    .left_panel p {
+        font-size: 9px; /* Уменьшаем размер текста */
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 480px) {
+    .left_panel {
+        position: fixed;
+        width: 65px; /* Ширина левой панели */
+        top: 40px;
+        height: calc(100vh - 40px);
+        padding-top: 40px;
+        gap: 10px;
+    }
+
+    .left_panel img {
+        width: 30px; /* Размер иконок */
+        height: 30px;
+    }
+
+    .left_panel p {
+        font-size: 8px; /* Уменьшаем размер текста */
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 320px) {
+    .left_panel {
+        position: fixed;
+        width: 65px; /* Ширина левой панели */
+        top: 35px;
+        height: calc(100vh - 35px);
+        padding-top: 8px;
+        gap: 8px;
+    }
+
+    .left_panel img {
+        width: 25px; /* Размер иконок */
+        height: 25px;
+    }
+
+    .left_panel p {
+        font-size: 7px; /* Уменьшаем размер текста */
+    }
+}

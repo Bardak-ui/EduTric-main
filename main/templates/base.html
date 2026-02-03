@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block title %}Навигация{% endblock %}</title>
+</head>
+<body>
+        <!-- Левая панель -->
+        <div class="left_panel">
+            <nav>
+                <div class="navigation">
+                    <a href="{% url 'profile' %}"><img class="avatar" src="{% static '/media/no_avatar.jpeg' %}" alt="Профиль"></a>
+                    <a href="{% url 'schedule' %}"><img class="schedule" src="{% static '/media/schedule.png' %}" alt="Расписание"></a>
+                    <!-- <a href="{% url 'search_user' %}"><img class="search_user" src="{% static '/media/searche.png' %}" alt="Поиск"></a> -->
+                    <a href="{% url 'FAQ_LIST' %}"><img class="FAQ_LIST" src="{% static '/media/faq.png' %}" alt="FAQ"></a>
+                </div>
+                <div class="ssilki">
+                    <a href="http://www.topcollege.ru/"><img src="{% static '/media/shrkt.png' %}" alt="Логотип 1"></a>
+                    <a href="https://shakhty.donland.ru/"><img src="{% static '/media/shackty.png' %}" alt="Логотип 2"></a>
+                </div>
+            </nav>
+            
+        </div>
+        <!-- Основной контент -->
+        <main class="content">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+</body>
+</html>

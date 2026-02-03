@@ -12,7 +12,7 @@ html{
 /* Основные стили профиля */
 .profile-container {
     display: flex;
-    padding-top: 80px;
+    padding-top: 40px;
     justify-content: right;
 }
 

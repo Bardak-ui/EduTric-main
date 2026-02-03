@@ -20,7 +20,7 @@ body {
     background: no-repeat;
     background: fixed;
     background-image: conic-gradient(
-            from 90deg at 60% 15%,
+            from 90deg at 60% 10%,
             #5f5f5f, 
             #000000
         );
@@ -37,17 +37,38 @@ body {
     width: 100%;
 }
 
-/* Стили для формы поиска */
-.navigation .searche {
+.searche {
     display: flex;
-    position: absolute;
     justify-content: right;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: -1;
     text-align: center;
-    left: 0px;
     border-radius: 15px;
     padding: 10px;
-    background-color: #575757;
-    color: white; /* Белый текст для контраста */
+    color: white;
+    width: 100%;
+    /* Убираем ненужные обертки */
+}
+
+.searche .search {
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15;
+    width: 740px;
+    height: 45px;
+    transition: border-color 0.3s ease;
+}
+
+.searche .search::before {
+    border-radius: 15px;
+    text-align: center;
+    font-size: 15;
+    height: 45px;
+    transition: border-color 0.3s ease;
+    background: linear-gradient(90deg, #5f5f5f, #000000);
+    border-radius: 20px; /* 15px + 5px */
 }
 
 .left_panel nav{
@@ -152,6 +173,28 @@ body {
 }
 /* Адаптация для планшетов */
 @media (max-width: 768px) {
+    .searche .search {
+        border-radius: 15px;
+        text-align: center;
+        font-size: 15;
+        width: 270px;
+        height: 45px;
+        transition: border-color 0.3s ease;
+    }
+    body { 
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background: no-repeat;
+        background: fixed;
+        background-image: conic-gradient(
+                from 90deg at 3% 10%,
+                #5f5f5f, 
+                #000000
+            );
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px; /* Базовый размер шрифта */
+    }
     .left_panel {
         position: fixed;
         width: 65px; /* Ширина левой панели */
